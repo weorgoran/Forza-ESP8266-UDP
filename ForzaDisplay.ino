@@ -36,8 +36,7 @@ void loop() {
   if (packetSize) {
     // read the packet into packetBufffer
 	Udp.read(packetBuffer, UDP_RX_PACKET_SIZE);
-    //int n = Udp.read(packetBuffer, UDP_RX_PACKET_SIZE);
-    // packetBuffer[n] = 0;
+	
     // float mph = forzaData->Speed * 2.237;
     
     uint8_t numLEDs = (uint8_t)map(forzaData->CurrentEngineRpm, 0, forzaData->EngineMaxRpm, 0 ,5);
@@ -52,11 +51,6 @@ void loop() {
       }
       FastLED.show();
     }
-	
-    // send a reply, to the IP address and port that sent us the packet we received
-    // Udp.beginPacket(Udp.remoteIP(), Udp.remotePort());
-    // Udp.write(ReplyBuffer);
-    // Udp.endPacket();
   }
 
 }
