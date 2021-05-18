@@ -1,0 +1,2 @@
+#define STASSID "*****"
+#define STAPSK  "*****"
